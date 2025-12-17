@@ -1011,3 +1011,74 @@ header.scrolled {
 .contact-info strong {
     color: var(--accent);
 }
+
+
+/* 1. Global Reset: Makes sizing easier */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* 2. Fluid Images: Prevents images from overflowing screens */
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* 3. Base Styles (Mobile First Approach) */
+
+
+/* Write styles here for Mobile phones primarily */
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    /* readable on mobile */
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.column {
+    width: 100%;
+    /* Full width on mobile */
+    margin-bottom: 20px;
+}
+
+
+/* 4. Tablet Breakpoint (768px and up) */
+
+@media (min-width: 768px) {
+    .container {
+        width: 80%;
+    }
+    /* Example: Two columns on tablet */
+    .column {
+        width: 48%;
+        display: inline-block;
+    }
+}
+
+
+/* 5. Desktop/Laptop Breakpoint (1024px and up) */
+
+@media (min-width: 1024px) {
+    .container {
+        width: 1000px;
+        /* Fixed max width for large screens */
+    }
+    /* Example: Three columns on desktop */
+    .column {
+        width: 30%;
+        display: inline-block;
+        margin-right: 3%;
+    }
+}
