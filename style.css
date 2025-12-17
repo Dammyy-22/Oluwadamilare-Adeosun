@@ -1097,7 +1097,7 @@ header.scrolled {
 /* 2. Fluid Images: Prevents images from overflowing screens */
 
 img {
-    max-width: auto%;
+    max-width: auto;
     height: auto;
 }
 
@@ -1114,7 +1114,7 @@ body {
 }
 
 .container {
-    width: 90%;
+    width: 50%;
     margin: 0 auto;
     padding: 20px;
 }
