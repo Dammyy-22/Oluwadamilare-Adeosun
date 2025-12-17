@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 
     <title>My Cybersecurity Portfolio</title>
 
@@ -246,8 +246,29 @@
         </div>
         <p>© 2025 Adeosun Oluwadamilare. All rights reserved.</p>
     </footer>
+    <script>
+        // This script finds elements wider than the screen and highlights them
+        // (Helps you spot the invisible invisible container breaking things)
+        document.addEventListener("DOMContentLoaded", function() {
+            var elements = document.querySelectorAll("*");
+            var width = document.documentElement.clientWidth;
 
+            // Loop through all elements
+            for (var i = 0; i < elements.length; i++) {
+                var el = elements[i];
+                // If an element is wider than the screen
+                if (el.offsetWidth > width) {
+                    // Force it to fit
+                    el.style.width = "100%";
+                    el.style.maxWidth = "100%";
+                    el.style.overflow = "hidden";
+                    console.log("Fixed element:", el); // See which element was broken in console
+                }
+            }
+        });
+    </script>
     <script src="script.js"></script>
+
 </body>
 
 </html>

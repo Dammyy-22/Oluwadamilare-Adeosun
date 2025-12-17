@@ -302,7 +302,7 @@ section {
 /* --- 5. ABOUT SECTION --- */
 
 .about-section {
-    padding: 120px 5%;
+    padding: 100px 5%;
     max-width: var(--container-width);
     margin: 0 auto;
 }
@@ -319,7 +319,7 @@ section {
 }
 
 .about-text blockquote {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-style: italic;
     color: var(--accent);
     margin-bottom: 30px;
@@ -1081,4 +1081,76 @@ body {
         display: inline-block;
         margin-right: 3%;
     }
+}
+
+
+/* --- UNIVERSAL RESPONSIVE FIXER --- */
+
+
+/* 1. Stop the side-scroll (The "Nuclear" option) */
+
+html,
+body {
+    width: 100%;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    /* Forces horizontal scrollbar to hide */
+    margin: 0;
+    padding: 0;
+}
+
+
+/* 2. Make padding calculate INSIDE width (Prevents expansion) */
+
+* {
+    box-sizing: border-box !important;
+}
+
+
+/* 3. Force all images and videos to shrink to screen size */
+
+img,
+video,
+iframe,
+canvas,
+svg {
+    max-width: 100% !important;
+    height: auto !important;
+    display: block;
+    /* Removes tiny gap under images */
+}
+
+
+/* 4. Force text to wrap instead of pushing the screen wide */
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+a,
+li,
+div {
+    overflow-wrap: break-word !important;
+    word-wrap: break-word !important;
+    white-space: normal !important;
+}
+
+
+/* 5. Stop tables and long inputs from breaking layout */
+
+table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    /* Allows table content to scroll internally */
+}
+
+input,
+textarea,
+select {
+    max-width: 100% !important;
 }
