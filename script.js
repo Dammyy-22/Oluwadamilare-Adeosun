@@ -1,117 +1,56 @@
-document.addEventListener('DOMContentLoaded', () => {
+/* --- Mobile Menu Toggle --- */
+function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    const barsIcon = document.getElementById('icon-bars');
+    const closeIcon = document.getElementById('icon-close');
+    const body = document.body;
 
-    /* --- 1. MOBILE MENU TOGGLE --- */
-    const menuBtn = document.querySelector('.menu-btn');
-    const nav = document.querySelector('nav');
-    const navLinks = document.querySelectorAll('nav a');
+    // Toggle menu visibility using CSS transform class
+    if (menu.classList.contains('active')) {
+        menu.classList.remove('active');
+        // Wait for transition to finish before hiding (optional, kept simple here)
+        setTimeout(() => menu.classList.add('hidden'), 300);
 
-    // Toggle menu on button click
-    menuBtn.addEventListener('click', () => {
-        nav.classList.toggle('active');
-        menuBtn.classList.toggle('open'); // Optional: for animating the hamburger icon
-    });
+        barsIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+        body.style.overflow = 'auto'; // Enable scroll
+    } else {
+        menu.classList.remove('hidden');
+        // Small delay to allow display:flex to apply before adding active class for transition
+        setTimeout(() => menu.classList.add('active'), 10);
 
-    // Close menu when a link is clicked
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            nav.classList.remove('active');
-            menuBtn.classList.remove('open');
-        });
-    });
-
-    /* --- 2. HEADER SCROLL EFFECT --- */
-    const header = document.querySelector('header');
-
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
-    });
-
-    /* --- 3. SCROLL REVEAL ANIMATION --- */
-    // This looks for any element with the class 'reveal'
-    const observerOptions = {
-        threshold: 0.1 // Trigger when 10% of the element is visible
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-            }
-        });
-    }, observerOptions);
-
-    const elementsToReveal = document.querySelectorAll('.reveal');
-    elementsToReveal.forEach(el => observer.observe(el));
-});
-/* --- 5. CUSTOM CURSOR LOGIC --- */
-const cursor = document.querySelector('.mouse-cursor');
-const hoverLinks = document.querySelectorAll('a, button, .btn, .project-card');
-
-document.addEventListener('mousemove', (e) => {
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top = e.clientY + 'px';
-});
-
-// Add 'hovered' class when mouse is over interactive elements
-hoverLinks.forEach(link => {
-    link.addEventListener('mouseenter', () => cursor.classList.add('hovered'));
-    link.addEventListener('mouseleave', () => cursor.classList.remove('hovered'));
-});
-/* --- 3 (UPDATED). STAGGERED SCROLL REVEAL --- */
-const observerOptions = {
-    threshold: 0.1
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('active');
-        }
-    });
-}, observerOptions);
-
-// Select all cards you want to stagger
-const staggeredElements = document.querySelectorAll('.service-card, .project-card');
-
-staggeredElements.forEach((el, index) => {
-    el.classList.add('reveal'); // Ensure they have the base reveal class
-    // Add dynamic delay based on column position (simple math)
-    // This makes the 2nd card wait 200ms, 3rd wait 400ms, etc.
-    el.style.transitionDelay = `${(index % 3) * 200}ms`;
-    observer.observe(el);
-});
-
-// Observe other generic reveal elements normally
-document.querySelectorAll('.reveal:not(.service-card):not(.project-card)').forEach(el => {
-    observer.observe(el);
-});
-
-/* --- 6. HERO BACKGROUND SLIDER --- */
-const heroImages = [
-    'images/header PROGRAMMING.jpg',
-    'images/code running.jpg',
-    'images/crypto hack.jpg',
-    'images/Cyber security illustration words.jpg'
-];
-
-let currentImageIndex = 0;
-const hero = document.querySelector('.hero');
-
-function changeHeroBackground() {
-    currentImageIndex = (currentImageIndex + 1) % heroImages.length;
-    hero.style.backgroundImage = `url(${heroImages[currentImageIndex]})`;
+        barsIcon.classList.add('hidden');
+        closeIcon.classList.remove('hidden');
+        body.style.overflow = 'hidden'; // Disable scroll
+    }
 }
 
-// Change background every 5 seconds
-setInterval(changeHeroBackground, 5000);
+const navbar = document.getElementById('navbar');
 
-const menuBtn = document.querySelector('.menu-btn');
-const navLinks = document.querySelector('.nav-links');
+window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
 
-menuBtn.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
+    if (currentScroll > 50) {
+        // Adds shadow when you've scrolled down a bit
+        navbar.style.boxShadow = '0 10px 30px -10px rgba(2, 12, 27, 0.7)';
+        navbar.style.background = 'rgba(10, 25, 47, 0.95)';
+    } else {
+        // Removes shadow when at the very top
+        navbar.style.boxShadow = 'none';
+        navbar.style.background = 'rgba(10, 25, 47, 1)'; // Or your preferred top color
+    }
 });
+
+/* --- Experience Tabs --- */
+function switchTab(index) {
+    const buttons = document.querySelectorAll('.tab-btn');
+    const panels = document.querySelectorAll('.tab-panel');
+
+    // Remove active class from all buttons and panels
+    buttons.forEach(btn => btn.classList.remove('active'));
+    panels.forEach(panel => panel.classList.remove('active'));
+
+    // Add active class to clicked button and corresponding panel
+    buttons[index].classList.add('active');
+    panels[index].classList.add('active');
+}

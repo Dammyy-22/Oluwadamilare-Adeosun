@@ -3,272 +3,315 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Oluwadamilare's Portfolio
+    </title>
 
-    <title>My Cybersecurity Portfolio</title>
+    <link rel="icon" href="images\Dammyyyy.png" type="image/png">
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- Link to local CSS file -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="mouse-cursor"></div>
-    <header>
-        <div class="logo">
-            <img src="images\logo.jpg" alt="logo">
-        </div>
 
-        <div class="menu-btn">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-        </div>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">OA</a>
 
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#reviews">Reviews</a></li>
-                <li><a href="#blogs">Blogs</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <section id="home" class="hero">
-        <div class="hero-content">
-
-            <h1>Entry Level Cybersecurity Analyst</h1>
-            <p> Study how system fails and how to reduce risk through basic security process.</p>
-            <div class="hero-buttons">
-                <a href="Oluwadamilare CV page 2.pdf" class="btn primary">Download My CV</a>
-                <a href="#portfolio" class="btn secondary">Check My Portfolio</a>
+            <!-- Desktop Menu -->
+            <div class="desktop-menu">
+                <a href="#about"><span class="nav-num">01.</span>About</a>
+                <a href="#experience"><span class="nav-num">02.</span>Certification</a>
+                <a href="#work"><span class="nav-num">03.</span>Work</a>
+                <a href="#contact"><span class="nav-num">04.</span>Contact</a>
+                <a href="Oluwadamilare CV page 2.pdf" class="btn-outline small">Resume</a>
             </div>
-        </div>
-        <div class="hero-illustration">
-            <!-- Placeholder for illustration -->
-            <div class="floating-shape shape1"></div>
-            <div class="floating-shape shape2"></div>
-            <div class="floating-shape shape3"></div>
-        </div>
-    </section>
 
-    <section id="about" class="reveal about-section">
-        <div class="about-container">
-            <div class="about-text">
-                <h2 class="section-title">Who I Am</h2>
-                <blockquote>
-                    I'm an ISC2 Certified Cybersecurity Analyst (CC), my skills cut through hands-on labs and researchs.
+            <!-- Mobile menu button -->
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                <!-- Hamburger Icon -->
+                <svg id="icon-bars" xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                <!-- Close Icon (Hidden by default) -->
+                <svg id="icon-close" class="hidden" xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden">
+            <a href="#about" onclick="toggleMobileMenu()">01. About</a>
+            <a href="#experience" onclick="toggleMobileMenu()">02. Certification</a>
+            <a href="#work" onclick="toggleMobileMenu()">03. Work</a>
+            <a href="#contact" onclick="toggleMobileMenu()">04. Contact</a>
+            <a href="Oluwadamilare CV page 2.pdf" class="btn-outline">Resume</a>
+        </div>
+    </nav>
+
+    <!-- Social Sidebars (Left) -->
+    <div class="side-element left">
+        <ul class="social-list">
+            <li><a href="https://github.com/Dammyy-22"><svg xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a></li>
+            <li><a href="https://medium.com/@adeosunoluwadamilare09"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 1770 1000" fill="currentColor">
+  <circle cx="500" cy="500" r="500" />
+  <ellipse cx="1296" cy="501" rx="250" ry="475" />
+  <ellipse cx="1682" cy="502" rx="88" ry="424" />
+</svg></a></li>
+            <li><a href="https://www.linkedin.com/in/oluwadamilare-adeosun-644448223/"><svg xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a></li>
+        </ul>
+        <div class="line"></div>
+    </div>
+
+    <!-- Social Sidebars (Right) -->
+    <div class="side-element right">
+        <a href="adeosunoluwadamilare09@gmail.com" class="email-link">adeosunoluwadamilare09@gmail.com</a>
+        <div class="line"></div>
+    </div>
+
+    <main class="content-wrapper">
+
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content fade-in-up">
+                <span class="highlight-text">Hi, my name is</span>
+                <h1 class="big-heading fade-in-up delay-1">Oluwadamilare Adeosun.</h1><br>
+                <p class="big-1"> Cybersecurity analyst | Network Security </p>
+
+                <a href="Oluwadamilare CV page 2.pdf" class="btn-outline big fade-in-up delay-3">Download CV</a>
+            </div>
+
+            <!-- Profile Image -->
+            <div class="hero-image fade-in-up delay-3">
+                <div class="img-wrapper">
+                    <img src="images\Dammyyyy.png" alt="Profile Picture">
+                    <div class="img-overlay"></div>
+                </div>
+                <div class="img-border"></div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <h2 class="section-title"><span class="num">01.</span>About Me</h2>
+            <div class="about-content">
+                <div class="text-block">
+                    <p>I am a cybersecurity professional specializing in offensive and defensive security, network monitoring, and infrastructure protection.
+                    </p>
+                    <p>Fast-forward to today and I've had the privilege of working on <span class="highlight-text">hands-on security labs to understand how systems communicate,</span> <span class="highlight-text"> How misconfigurations introduce risk and </span>
+                        <span class="highlight-text">how defensive controls detect and limit threats.</span>.</p>
+                    <p>My work emphasizes on practical analysis, repeatable testing, and clear technical documentation.</p>
                     <br>
-                    <br>
-                    <p>My goal is to executed red-team scenarios, and optimized detection rules to stop breaches before they escalated and cause damages</p>
-                    <div class="about-stats">
-                        <div class="stat">
-                            <h3>1+</h3>
-                            <p>Projects Completed</p>
+                    <h4 class="skills">Skills</h4>
+                    <ul class="skills-list">
+                        <li>
+                            <h3>Cybersecurity</h3> Network Troubleshooting, Penetration Testing, SIEM, Incident Response</li>
+                        <li>
+                            <h3>Programming</h3>Python, Bash, HTML/CSS</li>
+
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="section">
+            <h2 class="section-title"><span class="num">02.</span>Certification</h2>
+
+            <div class="tabs-wrapper">
+                <div class="tab-list">
+                    <button class="tab-btn active" onclick="switchTab(0)">ISC²</button>
+                    <button class="tab-btn" onclick="switchTab(1)">Cisco</button>
+                    <button class="tab-btn" onclick="switchTab(2)">Certificates of Achievement</button>
+                </div>
+
+                <div class="tab-content">
+                    <!-- Panel 1 -->
+                    <div class="tab-panel active">
+                        <h3>Certified in Cybersecurity<span class="highlight-text"></span></h3>
+                        <p class="range">Issued Sept 2025</p>
+                        <ul class="job-list">
+                            <li>Trained in Fundamental security principles and operations, network security and access controls which allows me to help organizations to build a stronger line of defense in the cyberspace.
+                                <a href="https://drive.google.com/file/d/1xojCbPwCadVZSSVtNK61zzzBGYhkyvO0/view?usp=drive_link"><i class="highlight-text"> Verify Certficate </i></a>
+                            </li>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <!-- Panel 2 -->
+                    <div class="tab-panel">
+                        <h3> Netacad Certifcations <span class="highlight-text"></span></h3>
+                        <p class="range">Issued 2025</p>
+                        <ul class="job-list">
+                            <li><strong>CyberOps:</strong> I have developed problem-solving skills to detect and analyze intrusions and monitor the network by completing up to 30 hours of 52 hands-on labs using virtual machines (Security Onion - ELK) and/or
+                                Cisco Packet Tracer. <a href="https://drive.google.com/file/d/1LiHjD36hREsnyiF96nINpKc23W6wCRrN/view?usp=drive_link"><i class="highlight-text"> Verify Certficate </i></a></li>
+                            <li><strong>Networking:</strong> I have knowledge in types of networks, how they work, how devices send and receive data, the types of network cabling, how IP addresses find information on the Internet, how transport and applications
+                                operate, and I've practiced building a home wireless network. Participated in up to 13 Cisco Packet Tracer activities.<a href="https://drive.google.com/file/d/1q4zFZNfQYSWZbaxVFCXkBpCHMa4QsxGg/view?usp=drive_link"><i class="highlight-text"> Verify Certficate </i></a></li>
+                            </li>
+                            <li><strong>Intro to Cybersecurity:</strong> I've introductory knowledge of cybersecurity, including the global implications of cyber threats on industries, and why cybersecurity is a growing profession. I understand vulnerabilities
+                                and threat detection and defense. and I also have insight into opportunities available with pursuing cybersecurity certifications.
+                                <a href="https://drive.google.com/file/d/1H33pLLB-h-xlBkMOlKqKtzGxWeXKUjqN/view?usp=drive_link"><i class="highlight-text"> Verify Certficate </i></a>
+                            </li>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Panel 3 -->
+                    <div class="tab-panel">
+                        <h3>Bootcamps, Internship and E-learning <span class="highlight-text"></span></h3>
+                        <p class="range">Issued 2025</p>
+                        <ul class="job-list">
+                            <li>I've taken part in bootcamps. Internships and self paced training with certificate of completeion to serve as an evidence in my expertise in Cybersecurity, Network, Project Management and Security Frameworks.
+                                <a href="https://docs.google.com/document/d/1SMn25B3BwzYyfty2xtCASIih_IdFpYwY6Arrgg_WvXk/edit?usp=drive_link"><i class="highlight-text"> Verify Certficate </i></a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Section -->
+        <section id="work" class="section">
+            <h2 class="section-title"><span class="num">03.</span>Works</h2>
+
+
+            <div class="projects-container">
+
+                <!-- Project 1 -->
+                <div class="project-card featured">
+                    <div class="project-image">
+                        <div class="img-wrapper">
+                            <img src="images\Network security.jpg" alt="Project 1">
+                            <div class="img-overlay"></div>
                         </div>
-                        <div class="stat">
-                            <h3>0.6+</h3>
-                            <p>Years Experience</p>
+                    </div>
+                    <div class="project-content right">
+                        <p class="highlight-text small">Featured Blogs</p>
+                        <h3 class="project-title">Networking Essentials: <br> ICMP Echo Analysis</h3>
+                        <div class="project-desc">
+                            <p>I focused on understanding how devices communicate at a low level by capturing a simple ICMP Echo Request/Reply sequence in Wireshark....</p>
                         </div>
-                        <div class="stat">
-                            <h3>100%</h3>
-                            <p>Client Satisfaction</p>
+                        <ul class="project-tech">
+                            <li>Kali Linux</li>
+                            <li>Wireshark</li>
+                            <li>VirtualBox</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="https://medium.com/@adeosunoluwadamilare09/day-1-networking-essentials-and-wireshark-icmp-echo-analysis-1bb5ffded932" aria-label="External Link"><svg xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
                         </div>
                     </div>
-            </div>
-            <div class="about-image">
-                <img src="images\Cyber security illustration words.jpg" alt="Profile Picture">
-                <div class="about-illustration">
-                    <div class="illus-shape"></div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <section id="services" class="reveal services-section">
-        <h2 class="section-title">What I Do</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <span class="service-num">01</span>
-                <h3>Security Lab Support (Primary) </h3>
-                <p> - Basic Network Sceurity Lab Setup <br> - Firewall and Routing Troubleshooting <br> - Misconfiguration analysis in controlled environments <br> - Security Research, Reporting and Documentation <br> BCP,DRP and Policy Research Summaries</p>
-                <div class="service-icon">🛡️</div>
-            </div>
-
-            <div class="service-card">
-                <span class="service-num">02</span>
-                <h3>Security communication & Design (Supporting)</h3>
-                <p> - UI/UX for Sceurity Dashboards and Tools <br> -Visual Explanations of Security Risks and Workflows <br> - Clear reports, Slides and Written Documentation <br> - Web Pages and Case Studies for Security Projects</p>
-                <div class="service-icon">💻</div>
-            </div>
-
-
-        </div>
-
-
-        </div>
-    </section>
-
-    <section id="portfolio" class="reveal portfolio-section">
-        <h2 class="section-title">Selected Works</h2>
-        <div class="portfolio-grid">
-            <div class="project-card">
-                <div class="project-img">
-
-                    <a href="https://medium.com/@adeosunoluwadamilare09/home-cybersecurity-lab-setup-using-vmware-workstation-using-pfsense-and-multi-os-virtual-machine-7acfdc2615e9"><img src="images\header 2 background.jpg" alt="Code running"></a>
-                    <div class="project-overlay">
-                        <h3>
-                            <center> Virtual Network Security Lab</center>
-                        </h3>
-
+                <!-- Project 2 -->
+                <div class="project-card featured inverted">
+                    <div class="project-content left">
+                        <p class="highlight-text small">Featured Blogs</p>
+                        <h3 class="project-title">TCP, UDP and HTTP Deep Packet Analysis</h3>
+                        <div class="project-desc">
+                            <p>I moved beyond simple ICMP traffic and focused on understanding how real web communication works at the packet level....</p>
+                        </div>
+                        <ul class="project-tech">
+                            <li>Kali Linux</li>
+                            <li>Wireshark</li>
+                            <li>Firefox Browser</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="https://medium.com/@adeosunoluwadamilare09/day-2-tcp-udp-and-http-deep-packet-analysis-674bb0927f64?postPublishedType=repub" aria-label="External Link"><svg xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+                        </div>
+                    </div>
+                    <div class="project-image">
+                        <div class="img-wrapper">
+                            <img src="images\header PROGRAMMING.jpg" alt="Project 2">
+                            <div class="img-overlay"></div>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="project-card">
-                <div class="project-img">
-                    <a href="https://medium.com/@adeosunoluwadamilare09/cybersecurity-my-new-chapter-10ed93615147"><img src="images\DDOS.jpg" alt="DDOS"></a>
-                    <div class="project-overlay">
-                        <center>
-                            <h3>Cybersecurity:From Zero to Confident Learner</h3>
-                        </center>
+                <!-- More Projects Grid -->
+                <h2 class="other-title">
+                    <div class="grid-1">
+                        <h2 class="highlight-text small">
+                            Hands on Lab Projects
+                        </h2>
+                    </div>
+                </h2>
+                <div class="grid-3">
+                    <!-- Card 1 -->
+                    <div class="small-card">
+                        <div class="card-header">
+                            <svg class="folder-icon" xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                            <div class="card-links">
+                                <a href="https://medium.com/@adeosunoluwadamilare09/home-cybersecurity-lab-setup-using-vmware-workstation-using-pfsense-and-multi-os-virtual-machine-7acfdc2615e9"><svg xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+                            </div>
+                        </div>
+                        <h4>Enterprise Network Security Lab</h4>
+                        <p>Designed a segmented virtual network with pfSense enforcing perimeter and internal firewall rules. Validated allowed and denied traffic paths using packet capture and firewall logs</p>
+                        <ul class="card-tech">
+                            <li>VMware</li>
+                            <li>pfSense</li>
+                            <li>Linux</li>
+                            <li>Windows</li>
+                        </ul>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="small-card">
+                        <div class="card-header">
+                            <svg class="folder-icon" xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                            <div class="card-links">
+                                <a href="https://medium.com/@adeosunoluwadamilare09/day-2-tcp-udp-and-http-deep-packet-analysis-674bb0927f64?postPublishedType=repub"><svg xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+                            </div>
+                        </div>
+                        <h4>Network Traffic Analysis</h4>
+                        <p>Captured and analyzed live ICMP, TCP, UDP and HTTP traffic. Examined packet headers, payloads and protocol behavior to understand real network communication patterns.</p>
+                        <br>
+                        <ul class="card-tech">
+                            <li>VMware</li>
+                            <li>Linux</li>
+                            <li>Wireshark</li>
+                        </ul>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="small-card">
+                        <div class="card-header">
+                            <svg class="folder-icon" xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                            <div class="card-links">
+                                <a href="https://medium.com/@adeosunoluwadamilare09/day-3-c4121cde538d?postPublishedType=initial"><svg xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+                            </div>
+                        </div>
+                        <h4>Host Discovery & Port Scanning</h4>
+                        <p>Performed host discovery and port scanning using multiple Nmap techniques. Correlated scan results with Wireshark captures to understand attacker and defender perspectives.</p>
+                        <ul class="card-tech">
+                            <li>Linux</li>
+                            <li>Nmap</li>
+                            <li>Wireshark</li>
+                        </ul>
                     </div>
                 </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-img">
-                    <a href="https://medium.com/@adeosunoluwadamilare09/day-3-c4121cde538d?postPublishedType=initial"><img src="images\crypto hack.jpg" alt="Crypto hack"></a>
-                    <div class="project-overlay">
-                        <center>
-                            <h3>Cybersecurity Research & Writing</h3>
-                        </center>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        </div>
-        </div>
-
-        </div>
-
-
-
-
-        <div class="portfolio-cta">
-            <br>
-            <a href="#contact" class="btn">See More Projects</a>
-        </div>
-    </section>
-
-
-    <section id="reviews" class="reveal testimonials-section">
-        <h2 class="section-title">Reviews</h2>
-        <div class="testimonials-grid">
-            <div class="testimonial-card">
-                <p> Strong at breaking down technical security issues visually and in writing </p>
-                <span><i></i></span>
-                <div class="client-info">
-                    <div>
-                        <h4></h4>
-                        <span></span>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial-card">
-                <p>Combines technical learning with communication skills </p>
-                <span><i></i></span>
-                <div class="client-info">
-                    <div>
-                        <h4></h4>
-                        <span></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="blogs" class="reveal blogs-section">
-        <h2 class="section-title">Latest Blogs</h2>
-        <div class="blogs-grid">
-            <div class="blog-card">
-                <div class="blog-img">
-                    <img src="images\malware.jpg" alt="Blog Image">
-                </div>
-                <div class="blog-content">
-                    <span class="blog-date">December 17, 2025</span>
-                    <h3>Networking Essentials and Wireshark: ICMP Echo Analysis</h3>
-                    <p> I focused on understanding how devices communicate at a low level by capturing a simple ICMP Echo Request/Reply sequence in Wireshark...</p>
-                    <a href="https://medium.com/@adeosunoluwadamilare09/day-1-networking-essentials-and-wireshark-icmp-echo-analysis-1bb5ffded932" class="read-more">Read More</a>
-                </div>
-            </div>
-            <div class="blog-card">
-                <div class="blog-img">
-                    <img src="images/DDOS.jpg" alt="Blog Image">
-                </div>
-                <div class="blog-content">
-                    <span class="blog-date">December 20, 2025</span>
-                    <h3>TCP, UDP, and HTTP Deep Packet Analysis </h3>
-                    <p> I moved beyond simple ICMP traffic and focused on understanding how real web communication works at the packet level...</p>
-                    <a href="https://medium.com/@adeosunoluwadamilare09/day-2-tcp-udp-and-http-deep-packet-analysis-674bb0927f64?postPublishedType=repub" class="read-more">Read More</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="reveal contact-section">
-        <div class="contact-container">
-            <h3>Ready to start a project?</h3>
-            <h2>Let's work together.</h2>
-            <a href="damilareadeosun877@gmail.com" class="btn">Get In Touch</a>
-            <div class="contact-info">
-                <p><strong>Phone:</strong> +234 810 335 0614</p>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="footer-content">
-
-            <div class="footer-links">
 
             </div>
-            <div class="footer-social">
-                <a href="https://www.linkedin.com/in/oluwadamilare-adeosun-644448223/">LinkedIn</a>
-                <a href="https://github.com/Dammyy-22">Github</a>
-                <a href="https://medium.com/@adeosunoluwadamilare09">Medium</a>
-            </div>
-            <br>
-        </div>
-        <p>© 2025 Adeosun Oluwadamilare. All rights reserved.</p>
-    </footer>
-    <script>
-        // This script finds elements wider than the screen and highlights them
-        // (Helps you spot the invisible invisible container breaking things)
-        document.addEventListener("DOMContentLoaded", function() {
-            var elements = document.querySelectorAll("*");
-            var width = document.documentElement.clientWidth;
+        </section>
 
-            // Loop through all elements
-            for (var i = 0; i < elements.length; i++) {
-                var el = elements[i];
-                // If an element is wider than the screen
-                if (el.offsetWidth > width) {
-                    // Force it to fit
-                    el.style.width = "100%";
-                    el.style.maxWidth = "100%";
-                    el.style.overflow = "hidden";
-                    console.log("Fixed element:", el); // See which element was broken in console
-                }
-            }
-        });
-    </script>
+        <!-- Contact Section -->
+        <section id="contact" class="section text-center">
+            <p class="highlight-text num">04. Contact</p><br>
+            <h2 class="big-heading">Get In Touch</h2>
+            <p class="contact-desc">
+                I'm currently looking for any new opportunities and projects, <br>Feel free to reach out my inbox is always open!
+            </p>
+            <a href="adeosunoluwadamilare09@gmail.com" class="btn-outline big">Send Me a Message</a>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Designed & Built by Oluwadamilare Adeosun</p>
+        </footer>
+
+    </main>
+
+    <!-- Link to local JS file -->
     <script src="script.js"></script>
-
 </body>
 
 </html>
