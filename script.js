@@ -54,3 +54,28 @@ function switchTab(index) {
     buttons[index].classList.add('active');
     panels[index].classList.add('active');
 }
+
+/* --- Contact Form Submission --- */
+document.getElementById('contact-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const form = e.target;
+    const formData = new FormData(form);
+    try {
+        const response = await fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+        if (response.ok) {
+            // Success, reload the page
+            location.reload();
+        } else {
+            // Handle error
+            alert('Something went wrong. Please try again.');
+        }
+    } catch (error) {
+        alert('Error sending message. Please try again.');
+    }
+});
