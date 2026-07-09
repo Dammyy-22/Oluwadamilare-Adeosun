@@ -27,17 +27,36 @@ function toggleMobileMenu() {
 
 const navbar = document.getElementById('navbar');
 
+const progressBar = document.getElementById('progress-bar');
+const backToTopBtn = document.getElementById('back-to-top');
+
 window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
+    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = maxScroll > 0 ? (currentScroll / maxScroll) * 100 : 0;
+
+    if (progressBar) {
+        progressBar.style.width = `${scrollPercent}%`;
+    }
+
+    if (backToTopBtn) {
+        backToTopBtn.classList.toggle('visible', currentScroll > 400);
+    }
 
     if (currentScroll > 50) {
-        navbar.style.boxShadow = '0 10px 30px -10px rgba(2, 12, 27, 0.7)';
-        navbar.style.background = 'rgba(7, 17, 31, 0.95)';
+        navbar.style.boxShadow = '0 10px 30px -10px rgba(88, 66, 39, 0.15)';
+        navbar.style.background = 'rgba(247, 239, 231, 0.95)';
     } else {
         navbar.style.boxShadow = 'none';
-        navbar.style.background = 'rgba(7, 17, 31, 0.9)';
+        navbar.style.background = 'rgba(247, 239, 231, 0.9)';
     }
 });
+
+if (backToTopBtn) {
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}
 
 /* --- Experience Tabs --- */
 function switchTab(index) {
