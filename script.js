@@ -180,28 +180,65 @@ document.querySelectorAll('a, button, input, textarea, .project-card, .small-car
 document.getElementById('mobile-menu-overlay').addEventListener('click', toggleMobileMenu);
 
 /* --- Contact Form Submission --- */
-const contactForm = document.getElementById('contact-form');
+/* --- Contact Form Submission --- */
+
+const contactForm = document.getElementById("contact-form");
 
 if (contactForm) {
-    contactForm.addEventListener('submit', async function(e) {
+    contactForm.addEventListener("submit", async function (e) {
         e.preventDefault();
+
         const form = e.target;
         const formData = new FormData(form);
+
         try {
             const response = await fetch(form.action, {
-                method: 'POST',
+                method: "POST",
                 body: formData,
                 headers: {
-                    'Accept': 'application/json'
+                    Accept: "application/json"
                 }
             });
+
             if (response.ok) {
-                location.reload();
+                alert("Message sent successfully!");
+                form.reset();
             } else {
-                alert('Something went wrong. Please try again.');
+                alert("Something went wrong. Please try again.");
             }
         } catch (error) {
-            alert('Error sending message. Please try again.');
+            console.error(error);
+            alert("Error sending message. Please try again.");
         }
     });
+}
+
+/* --- Mobile Menu --- */
+
+const menuBtn = document.querySelector(".mobile-menu-btn");
+const mobileMenu = document.getElementById("mobile-menu");
+const overlay = document.getElementById("mobile-menu-overlay");
+
+if (menuBtn && mobileMenu && overlay) {
+
+    menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("active");
+        overlay.classList.toggle("active");
+        document.body.classList.toggle("menu-open");
+    });
+
+    overlay.addEventListener("click", () => {
+        mobileMenu.classList.remove("active");
+        overlay.classList.remove("active");
+        document.body.classList.remove("menu-open");
+    });
+
+    mobileMenu.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+            mobileMenu.classList.remove("active");
+            overlay.classList.remove("active");
+            document.body.classList.remove("menu-open");
+        });
+    });
+
 }

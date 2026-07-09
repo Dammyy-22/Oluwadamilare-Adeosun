@@ -1,5 +1,27 @@
 /* --- Variables --- */
 
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+img,
+svg,
+video,
+canvas {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
 :root {
     --dark: #07111f;
@@ -178,9 +200,10 @@ ul {
 }
 
 .section {
-    padding: 100px 0;
+    width: 100%;
     max-width: 1000px;
     margin: 0 auto;
+    padding: 100px 20px;
     position: relative;
 }
 
@@ -407,14 +430,23 @@ nav.nav-hidden {
 /* --- Hero Section --- */
 
 .hero-section {
-    min-height: 100vh;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 120px 0 80px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.hero-content {
+    flex: 1 1 500px;
+    min-width: 0;
+}
+
+.hero-image {
+    flex: 0 1 320px;
+    max-width: 100%;
 }
 
 .big-heading {
@@ -748,6 +780,8 @@ nav.nav-hidden {
 
 .project-card {
     display: grid;
+    width: 100%;
+    overflow: hidden;
     grid-template-columns: repeat(12, 1fr);
     align-items: center;
     position: relative;
@@ -756,7 +790,6 @@ nav.nav-hidden {
     border: 1px solid var(--border);
     background: linear-gradient(135deg, rgba(17, 34, 64, 0.92), rgba(10, 25, 47, 0.95));
     box-shadow: var(--shadow);
-    overflow: hidden;
     transition: var(--transition);
 }
 
@@ -812,6 +845,11 @@ nav.nav-hidden {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+}
+
+.project-content,
+.project-image {
+    min-width: 0;
 }
 
 .project-title {
@@ -1085,6 +1123,24 @@ nav.nav-hidden {
 }
 
 @media (max-width: 900px) {
+    .container,
+    .section,
+    .hero-section {
+        width: 100%;
+        max-width: 100%;
+    }
+    .hero-content,
+    .project-content {
+        width: 100%;
+    }
+    .project-card {
+        grid-template-columns: 1fr;
+    }
+    .project-image {
+        grid-column: auto;
+        width: 100%;
+        height: auto;
+    }
     .desktop-menu {
         display: none;
     }
@@ -1121,7 +1177,7 @@ nav.nav-hidden {
         gap: 28px;
     }
     .skills-list {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat (auto-fit, minmax(160px, 1fr));
     }
     .tabs-wrapper {
         grid-template-columns: 1fr;
@@ -1168,7 +1224,7 @@ nav.nav-hidden {
         letter-spacing: 0.06em;
     }
     .stats-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
         gap: 12px;
     }
     .btn-outline.big {
@@ -1422,4 +1478,8 @@ h3,
 .contact-form textarea {
     resize: vertical;
     min-height: 150px;
+}
+
+body.menu-open {
+    overflow: hidden;
 }
