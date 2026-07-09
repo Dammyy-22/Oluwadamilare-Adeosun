@@ -44,11 +44,11 @@ window.addEventListener('scroll', () => {
     }
 
     if (currentScroll > 50) {
-        navbar.style.boxShadow = '0 10px 30px -10px rgba(88, 66, 39, 0.15)';
-        navbar.style.background = 'rgba(247, 239, 231, 0.95)';
+        navbar.style.boxShadow = '0 10px 30px -10px rgba(2, 12, 27, 0.8)';
+        navbar.style.background = 'rgba(3, 10, 18, 0.98)';
     } else {
         navbar.style.boxShadow = 'none';
-        navbar.style.background = 'rgba(247, 239, 231, 0.9)';
+        navbar.style.background = 'rgba(3, 10, 18, 0.98)';
     }
 });
 
