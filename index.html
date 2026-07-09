@@ -15,6 +15,10 @@
 </head>
 
 <body>
+    <canvas id="particle-canvas"></canvas>
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+    <div id="mobile-menu-overlay"></div>
 
     <!-- Navigation -->
     <nav id="navbar">
@@ -32,7 +36,7 @@
             </div>
 
             <!-- Mobile menu button -->
-            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+            <button class="mobile-menu-btn" type="button" onclick="toggleMobileMenu()" aria-label="Toggle menu">
                 <!-- Hamburger Icon -->
                 <svg id="icon-bars" xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
                 <!-- Close Icon (Hidden by default) -->
@@ -74,10 +78,25 @@
 
         <!-- Hero Section -->
         <section class="hero-section">
-            <div class="hero-content fade-in-up">
+            <div class="hero-content fade-in-up reveal">
                 <span class="highlight-text">Hi, my name is</span>
                 <h1 class="big-heading fade-in-up delay-1">Oluwadamilare Adeosun.</h1><br>
                 <p class="big-1"> Cybersecurity Analyst | Network Security </p>
+
+                <div class="stats-grid fade-in-up delay-2">
+                    <div class="stat-card">
+                        <span class="counter" data-target="5" data-suffix="+">0</span>
+                        <p>Years Learning</p>
+                    </div>
+                    <div class="stat-card">
+                        <span class="counter" data-target="20" data-suffix="+">0</span>
+                        <p>Hands-on Labs</p>
+                    </div>
+                    <div class="stat-card">
+                        <span class="counter" data-target="3" data-suffix="+">0</span>
+                        <p>Certifications</p>
+                    </div>
+                </div>
 
                 <a href="oluwadamilare_adeosun_cybersecurity_cv_role.pdf" class="btn-outline big fade-in-up delay-3">Download CV</a>
             </div>
@@ -93,7 +112,7 @@
         </section>
 
         <!-- About Section -->
-        <section id="about" class="section">
+        <section id="about" class="section reveal">
             <h2 class="section-title"><span class="num">01.</span>About Me</h2>
             <div class="about-content">
                 <div class="text-block">
@@ -116,7 +135,7 @@
         </section>
 
         <!-- Experience Section -->
-        <section id="experience" class="section">
+        <section id="experience" class="section reveal">
             <h2 class="section-title"><span class="num">02.</span>Certification</h2>
 
             <div class="tabs-wrapper">
@@ -172,14 +191,14 @@
         </section>
 
         <!-- Work Section -->
-        <section id="work" class="section">
+        <section id="work" class="section reveal">
             <h2 class="section-title"><span class="num">03.</span>Works</h2>
 
 
             <div class="projects-container">
 
                 <!-- Project 1 -->
-                <div class="project-card featured">
+                <div class="project-card featured reveal">
                     <div class="project-image">
                         <div class="img-wrapper">
                             <img src="images\Network security.jpg" alt="Project 1">
@@ -204,7 +223,7 @@
                 </div>
 
                 <!-- Project 2 -->
-                <div class="project-card featured inverted">
+                <div class="project-card featured inverted reveal">
                     <div class="project-content left">
                         <p class="highlight-text small">Featured Blogs</p>
                         <h3 class="project-title">TCP, UDP and HTTP Deep Packet Analysis</h3>
@@ -303,7 +322,7 @@
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="section text-center">
+        <section id="contact" class="section text-center reveal">
             <p class="highlight-text num">04. Contact</p><br>
             <h2 class="big-heading">Get In Touch</h2>
             <p class="contact-desc">
